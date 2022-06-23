@@ -16,4 +16,5 @@ Pod::Spec.new do |s|
   s.source_files = "ios/**/*.{h,m,mm}"
 
   s.dependency "React-Core"
+  s.dependency "VungleSDK-iOS", "6.11.0"
 end
