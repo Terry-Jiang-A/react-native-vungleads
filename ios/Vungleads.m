@@ -34,7 +34,7 @@
 static NSString *const SDK_TAG = @"VungleSdk";
 static NSString *const TAG = @"Vungle Ads";
 
-RCTResponseSenderBlock _onInitialized = nil;
+RCTResponseSenderBlock _onVungleAdsInitialized = nil;
 
 static Vungleads *VungleShared; // Shared instance of this bridge module.
 
@@ -89,7 +89,7 @@ RCT_EXPORT_METHOD(initialize :(NSString *)sdkKey :(RCTResponseSenderBlock)callba
     }
     
     self.pluginInitialized = YES;
-    _onInitialized = callback;
+    _onVungleAdsInitialized = callback;
     
     self.sdk = [VungleSDK sharedSDK];
     [self.sdk updateConsentStatus:VungleConsentDenied consentMessageVersion:@"Accepted"];
@@ -165,7 +165,7 @@ RCT_EXPORT_METHOD(initialize :(NSString *)sdkKey :(RCTResponseSenderBlock)callba
 
 - (void)vungleSDKDidInitialize {
     NSLog(@"-->> Delegate Callback: vungleSDKDidInitialize - SDK initialized SUCCESSFULLY");
-    _onInitialized(@[@"success"]);
+    _onVungleAdsInitialized(@[@"success"]);
     
 }
 
@@ -175,7 +175,7 @@ RCT_EXPORT_METHOD(initialize :(NSString *)sdkKey :(RCTResponseSenderBlock)callba
 
 - (void)vungleSDKFailedToInitializeWithError:(NSError *)error {
     NSLog(@"-->> Delegate Callback: vungleSDKFailedToInitializeWithError: %@",error);
-    _onInitialized(@[@" - VungleInitializationDelegate initializationFailed with error: %@", error ]);
+    _onVungleAdsInitialized(@[@" - VungleInitializationDelegate initializationFailed with error: %@", error ]);
     
 }
 #pragma mark - Interstitials
