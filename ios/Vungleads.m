@@ -129,7 +129,7 @@ RCT_EXPORT_METHOD(initialize :(NSString *)sdkKey :(RCTResponseSenderBlock)callba
         
     } else {
         NSLog(@"-->> Delegate Callback: vungleAdPlayabilityUpdate: Ad is NOT available for Placement ID: %@", placementID);
-        //[self sendReactNativeEventWithName: @"OnVungleAdNotAvailableForPlacementID" body: @{@"adUnitId" : placementID}];
+        [self sendReactNativeEventWithName: @"OnVungleAdNotAvailableForPlacementID" body: @{@"error" : [[NSString alloc] initWithFormat: @"Ad is NOT available for Placement ID: %@", placementID] }];
         
     }
     
@@ -190,6 +190,7 @@ RCT_EXPORT_METHOD(loadInterstitial:(NSString *)adUnitIdentifier)
         
         if (error) {
             NSLog(@"Unable to load placement with reference ID :%@, Error %@", adUnitIdentifier, error);
+            [self sendReactNativeEventWithName: @"OnVungleAdNotAvailableForPlacementID" body: @{@"error": error}];
         }
     }
     
@@ -231,11 +232,12 @@ RCT_EXPORT_METHOD(loadBottomBanner:(NSString *)adUnitIdentifier)
            
         }
         
-    }
-     else {
+    }else {
         
         if (error) {
             NSLog(@"Unable to load placement with reference ID :%@, Error %@", adUnitIdentifier, error);
+            [self sendReactNativeEventWithName: @"OnVungleAdNotAvailableForPlacementID" body: @{@"error" : error}];
+            
         }
     }
 
@@ -306,6 +308,7 @@ RCT_EXPORT_METHOD(unLoadAds:(NSString *)adUnitIdentifier)
     return @[@"OnVungleRewardUserForPlacementID",
              @"OnVungleTrackClickForPlacementID",
              @"OnVungleAvailable",
+             @"OnVungleAdNotAvailableForPlacementID",
              @"OnVungleWillLeaveApplicationForPlacementID",
              
              @"OnVungleDidShowAdForPlacementID",

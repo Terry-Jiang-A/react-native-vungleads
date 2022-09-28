@@ -88,6 +88,10 @@ const App = () => {
       }
       
     });
+    Vungleads.addEventListener('OnVungleAdNotAvailableForPlacementID', (adInfo) => {
+      
+      logStatus('Ad not available with error: '+adInfo.error);
+    });
    
 
     Vungleads.addEventListener('OnVungleWillShowAdForPlacementID', (adInfo) => {

@@ -74,6 +74,10 @@ public class VungleadsModule extends ReactContextBaseJavaModule {
       @Override
       public void onError(String placementReferenceId, VungleException exception) {
         Log.e(TAG, "onError: " + exception);
+        WritableMap params = Arguments.createMap();
+        params.putString( "adUnitId", placementReferenceId );
+        params.putString("error", exception.getLocalizedMessage());
+        sendReactNativeEvent( "OnVungleAdNotAvailableForPlacementID", params );
 
       }
     };
@@ -251,6 +255,10 @@ public class VungleadsModule extends ReactContextBaseJavaModule {
           @Override
           public void onError(String placementReferenceId, VungleException exception) {
             Log.e(TAG, "onError: " + exception.getLocalizedMessage());
+            WritableMap params = Arguments.createMap();
+            params.putString( "adUnitId", placementReferenceId );
+            params.putString("error", exception.getLocalizedMessage());
+            sendReactNativeEvent( "OnVungleAdNotAvailableForPlacementID", params );
 
           }
         });
