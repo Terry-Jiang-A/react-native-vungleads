@@ -185,9 +185,9 @@ PODS:
     - React-cxxreact (= 0.63.4)
     - React-jsi (= 0.63.4)
   - React-jsinspector (0.63.4)
-  - react-native-vungleads (0.1.1):
+  - react-native-vungleads (0.1.2):
     - React-Core
-    - VungleSDK-iOS (= 6.11.0)
+    - VungleSDK-iOS (= 6.12.3)
   - React-RCTActionSheet (0.63.4):
     - React-Core/RCTActionSheetHeaders (= 0.63.4)
   - React-RCTAnimation (0.63.4):
@@ -250,7 +250,7 @@ PODS:
     - React-jsi (= 0.63.4)
   - RNGestureHandler (2.4.2):
     - React-Core
-  - VungleSDK-iOS (6.11.0)
+  - VungleSDK-iOS (6.12.3)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -283,7 +283,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
-  - VungleSDK-iOS (= 6.11.0)
+  - VungleSDK-iOS (= 6.12.3)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -366,7 +366,7 @@ SPEC CHECKSUMS:
   React-jsi: a0418934cf48f25b485631deb27c64dc40fb4c31
   React-jsiexecutor: 93bd528844ad21dc07aab1c67cb10abae6df6949
   React-jsinspector: 58aef7155bc9a9683f5b60b35eccea8722a4f53a
-  react-native-vungleads: 57b4c2512a6987ae016b69ecde81d3bf31ce3581
+  react-native-vungleads: 9aa2f18f7b5adca606dd7d065c180731952c320e
   React-RCTActionSheet: 89a0ca9f4a06c1f93c26067af074ccdce0f40336
   React-RCTAnimation: 1bde3ecc0c104c55df246eda516e0deb03c4e49b
   React-RCTBlob: a97d378b527740cc667e03ebfa183a75231ab0f0
@@ -378,9 +378,9 @@ SPEC CHECKSUMS:
   React-RCTVibration: ae4f914cfe8de7d4de95ae1ea6cc8f6315d73d9d
   ReactCommon: 73d79c7039f473b76db6ff7c6b159c478acbbb3b
   RNGestureHandler: 61628a2c859172551aa2100d3e73d1e57878392f
-  VungleSDK-iOS: 5d0c27330a1d793d1f628a1f0e227113c9f8a478
+  VungleSDK-iOS: 27725029a42dfb9e39c67956637233fde1ee1797
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
 
-PODFILE CHECKSUM: c53bc70c403b8ac604fb5160427be57ee71c43fb
+PODFILE CHECKSUM: e51064b3e843dbb08d6a1f49ec1f2bd4f028a40d
 
 COCOAPODS: 1.11.3

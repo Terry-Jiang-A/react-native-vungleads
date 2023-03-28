@@ -19,10 +19,10 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
-    compileSdkVersion safeExtGet('Vungleads_compileSdkVersion', 29)
+    compileSdkVersion safeExtGet('Vungleads_compileSdkVersion', 31)
     defaultConfig {
         minSdkVersion safeExtGet('Vungleads_minSdkVersion', 21)
-        targetSdkVersion safeExtGet('Vungleads_targetSdkVersion', 29)
+        targetSdkVersion safeExtGet('Vungleads_targetSdkVersion', 31)
         versionCode 1
         versionName "1.0"
 
@@ -55,7 +55,7 @@ repositories {
 
 dependencies {
     //noinspection GradleDynamicVersion
-    implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation "com.facebook.react:react-native:0.63.4"  // From node_modules
     // Vungle SDK
-    implementation 'com.vungle:publisher-sdk-android:6.11.0'
+    implementation 'com.vungle:publisher-sdk-android:6.12.1'
 }

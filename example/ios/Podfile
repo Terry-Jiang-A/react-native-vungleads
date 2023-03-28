@@ -7,7 +7,7 @@ target 'VungleadsExample' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
-  pod "VungleSDK-iOS", "6.11.0"
+  pod "VungleSDK-iOS", "6.12.3"
 
   pod 'react-native-vungleads', :path => '../..'
 
